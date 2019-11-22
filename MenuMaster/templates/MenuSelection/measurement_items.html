@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="jumbotron mx-3 my-5">
+
+    <h1>Measurement Item</h1><hr>
+
+    <table class="table my-4">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Menu Item</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">UOM</th>
+          <th scope="col">Item</th>
+          <th scope="col">Type</th>
+          <th scope="col">Brand</th>
+          <th scope="col">Measure</th>
+          <th scope="col">Unit Of Measure</th>
+        </tr>
+      </thead>
+      <tbody>
+
+          {% for i in menu_item2%}
+            <tr>
+              <th scope="row">{{menu_item}}</th>
+              <td>{{menu_item1.quantity}}</td>
+              <td>{{menu_item1.quantiy_of_measurement|upper}}</td>
+              <td>{{i.item|upper}}</td>
+              <td>{{i.type|upper}}</td>
+              <td>{{i.brand}}</td>
+              <td>{{i.measure}}</td>
+              <td>{{i.unit_of_measure}}</td>
+            </tr>
+          {% endfor %}
+
+      </tbody>
+    </table>
+    </div>
+  </body>
+</html>

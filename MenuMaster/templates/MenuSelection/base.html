@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+    .card {
+      float:left;
+    }
+    img{
+      height:200px;
+      width:400px;
+    }
+
+  </style>
+
+  </head>
+  <body>
+    <div class="alert alert-success my-5 mx-
+    " role="alert">
+      <center> MENU LIST </center>
+    </div>
+
+    <h1 class="mx-3 my-4">BREAKFAST</h1><hr>
+    <div class="row my-4 mx-3">
+      {% for item in breakfast_list %}
+      <a href="measurement_items/{{item.item_name}}">
+        <div class="card mx-4 my-3" style="width: 18rem;">
+          {% if item.image %}
+            <img src="{{item.image.url}}" class="card-img-top" alt="...">
+          {% else %}
+            <img src="..." class="card-img-top" alt="...">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title"><center>{{item.item_name|upper}}</center></h5>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div><hr>
+
+    <h1 class="mx-3 my-4">LUNCH</h1><hr>
+    <div class="row my-4 mx-3">
+      {% for item in lunch_list %}
+      <a href="measurement_items/{{item.item_name}}">
+        <div class="card mx-4 my-3" style="width: 18rem;">
+          {% if item.image %}
+            <img src="{{item.image.url}}" class="card-img-top" alt="...">
+          {% else %}
+            <img src="..." class="card-img-top" alt="...">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title"><center>{{item.item_name|upper}}</center></h5>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div><hr>
+
+    <h1 class="mx-3 my-4">EVENING SNACKS & DINNER</h1><hr>
+    <div class="row my-4 mx-3">
+      {% for item in snacks_dinner_list %}
+      <a href="measurement_items/{{item.item_name}}">
+        <div class="card mx-4 my-3" style="width: 18rem;">
+          {% if item.image %}
+            <img src="{{item.image.url}}" class="card-img-top" alt="...">
+          {% else %}
+            <img src="..." class="card-img-top" alt="...">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title"><center>{{item.item_name|upper}}</center></h5>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    <h1 class="mx-3 my-4">SPECIAL ITEMS</h1><hr>
+    <div class="row my-4 mx-3">
+      {% for item in special_item_list %}
+      <a href="measurement_items/{{item.item_name}}">
+        <div class="card mx-4 my-3" style="width: 18rem;">
+
+          {% if item.image %}
+            <img src="{{item.image.url}}" class="card-img-top" alt="...">
+          {% else %}
+            <img src="..." class="card-img-top" alt="...">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title"><center>{{item.item_name|upper}}</center></h5>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div><hr>
+
+  </body>
+</html>
